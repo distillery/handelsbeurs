@@ -42,18 +42,22 @@ Game::Game() {
     }
 
     
-    image[0] = "graphics/helicopter.png";
+    image[0] = "graphics/nerd01.gif";
     value[0] = 1;
-    image[1] = "graphics/luchtbalon.png";
+    image[1] = "graphics/nerd02.gif";
     value[1] = 1;
-    image[2] = "graphics/parachute.png";
+    image[2] = "graphics/nerd03.gif";
     value[2] = 1;
-    image[3] = "graphics/vliegtuig1.png";
+    image[3] = "graphics/nerd04.gif";
     value[3] = 1;
-    image[4] = "graphics/vliegtuig2.png";
+    image[4] = "graphics/nerd05.gif";
     value[4] = 1;
-    image[5] = "graphics/jeff.png";
-    value[5] = -1;
+    image[5] = "graphics/nerd06.gif";
+    value[5] = 1;
+    image[6] = "graphics/nerd07.gif";
+    value[6] = 1;
+    image[7] = "graphics/bomb.gif";
+    value[7] = -1;
 
     setup = false;
     resize_plexi = -1;
@@ -81,7 +85,7 @@ void Game::start() {
     playing = false;
     speed = 1000;
     score = 0;
-    lives = 3;
+    lives = 9;
     rank = ranking.size();
     
     countdown = true;
@@ -111,7 +115,7 @@ void Game::update() {
                 case 1: img = "one"; break;
             }
             for (int i=0; i<NUM_PLEXIS; i++) {
-                plexi[i]->image.loadImage("graphics/"+img+".png");
+                plexi[i]->image.loadImage("graphics/"+img+".gif");
             }
         }
         
@@ -145,10 +149,17 @@ void Game::update() {
                         plexi[i]->value = 0;
                         plexi[i]->image.clear();
                         if (speed>1) speed -= 2;
+                        
+                        if (lives<=3) lives = 3;
+                        else if (lives<=6) lives = 6;
+                        else lives = 9;
                     }
                     
                     if (plexi[i]->value < 0) {
-                        lives--;
+                        if (lives<=3) lives = 0;
+                        else if (lives<=6) lives = 3;
+                        else lives = 6;
+
                         plexi[i]->value = 0;
                         
                         if (lives==0) {
@@ -168,6 +179,12 @@ void Game::update() {
             }
         }
         else if (!active) {
+            lives--;
+            if (lives==0) {
+                playing = false;
+                dead = true;
+            }
+
             int r = ofRandom(NUM_GRAPHICS);
             plexi[int(ofRandom(NUM_PLEXIS))]->light(image[r], value[r], speed);
         }

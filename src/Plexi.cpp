@@ -49,7 +49,7 @@ void Plexi::hit() {
 
 
 void Plexi::died() {
-    image.loadImage("graphics/dead.png");
+    image.loadImage("graphics/bomb.gif");
     isDead = true;
     dead_ts = ofGetElapsedTimeMillis() + 1000;
 }

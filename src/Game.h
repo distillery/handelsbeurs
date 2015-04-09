@@ -13,7 +13,7 @@
 #include "Plexi.h"
 
 #define NUM_PLEXIS 12
-#define NUM_GRAPHICS 6
+#define NUM_GRAPHICS 8
 #define COUNTDOWN_TIME 4
 
 
