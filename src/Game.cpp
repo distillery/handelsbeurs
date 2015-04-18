@@ -85,7 +85,7 @@ void Game::start() {
     playing = false;
     speed = 1000;
     score = 0;
-    lives = 9;
+    lives = 18;
     rank = ranking.size();
     
     countdown = true;
@@ -115,7 +115,7 @@ void Game::update() {
                 case 1: img = "one"; break;
             }
             for (int i=0; i<NUM_PLEXIS; i++) {
-                plexi[i]->image.loadImage("graphics/"+img+".gif");
+                plexi[i]->image.loadImage("graphics/"+img+".gif"); // _flipped
             }
         }
         
@@ -150,15 +150,15 @@ void Game::update() {
                         plexi[i]->image.clear();
                         if (speed>1) speed -= 2;
                         
-                        if (lives<=3) lives = 3;
-                        else if (lives<=6) lives = 6;
-                        else lives = 9;
+                        if (lives<=6) lives = 6;
+                        else if (lives<=12) lives = 12;
+                        else lives = 18;
                     }
                     
                     if (plexi[i]->value < 0) {
-                        if (lives<=3) lives = 0;
-                        else if (lives<=6) lives = 3;
-                        else lives = 6;
+                        if (lives<=6) lives = 0;
+                        else if (lives<=12) lives = 6;
+                        else lives = 12;
 
                         plexi[i]->value = 0;
                         
@@ -190,7 +190,7 @@ void Game::update() {
         }
         
         //cout << ofToString(score) << " | " << ofToString(lives) << " | " << ofToString(speed) << endl;
-        action = "game / hitPlexi #" + ofToString(plexi) + " / " + ofToString(score) + "|" + ofToString(lives) + "|" + ofToString(speed);
+        action = "game / hitPlexi #" + ofToString(plexi) + " / " + ofToString(score) + "|" + ofToString(lives/2) + "|" + ofToString(speed);
     }
     else {
         

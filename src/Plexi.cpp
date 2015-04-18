@@ -83,7 +83,7 @@ void Plexi::update() {
 void Plexi::draw() {
     
     if (isHit) { // yellow
-        ofSetColor(247, 148, 30);
+        ofSetColor(255, 222, 22);
         ofRect(x, y, size, size);
     }
     else if (image.isAllocated()) { // 3-2-1-image
@@ -91,7 +91,7 @@ void Plexi::draw() {
         image.draw(x, y, size, size);
     }
     else {
-        ofSetColor(75, 12, 98); // blue
+        ofSetColor(46, 49, 146); // blue
         ofRect(x, y, size, size);
     }
 }

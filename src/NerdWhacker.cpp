@@ -49,7 +49,7 @@ void NerdWhacker::update() {
             char s3 = score_chars[2];
             
             // lives
-            int lives = game->lives;
+            int lives = game->lives / 2;
             string lives_string = ofToString(lives);
             const char * lives_chars = lives_string.c_str();
             char l = lives_chars[0];
