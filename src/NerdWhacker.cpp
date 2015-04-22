@@ -104,18 +104,18 @@ void NerdWhacker::update() {
                 case 'm': game->hitMultiPlayer(); break; // m = multiplayer
                 case 'n': game->hitSinglePlayer(); break; // n = singleplayer
                 case 'p': game->hitSinglePlayer(); break; // p = re/play
-                case 'f': game->hitPlexi(0); break; // a = plexi 1
-                case 'a': game->hitPlexi(1); break; // z = plexi 2
-                case 'k': game->hitPlexi(2); break; // e = plexi 3
-                case 'g': game->hitPlexi(3); break; // r = plexi 4
-                case 'e': game->hitPlexi(4); break; // q = plexi 5
-                case 'c': game->hitPlexi(5); break; // s = plexi 6
-                case 'l': game->hitPlexi(6); break; // d = plexi 7
-                case 'i': game->hitPlexi(7); break; // f = plexi 8
-                case 'd': game->hitPlexi(8); break; // w = plexi 9
-                case 'b': game->hitPlexi(9); break; // x = plexi 10
-                case 'h': game->hitPlexi(10); break; // c = plexi 11
-                case 'j': game->hitPlexi(11); break; // v = plexi 12
+                case 'a': game->hitPlexi(0); break; // a = plexi 1
+                case 'z': game->hitPlexi(1); break; // z = plexi 2
+                case 'e': game->hitPlexi(2); break; // e = plexi 3
+                case 'r': game->hitPlexi(3); break; // r = plexi 4
+                case 'q': game->hitPlexi(4); break; // q = plexi 5
+                case 's': game->hitPlexi(5); break; // s = plexi 6
+                case 'd': game->hitPlexi(6); break; // d = plexi 7
+                case 'f': game->hitPlexi(7); break; // f = plexi 8
+                case 'w': game->hitPlexi(8); break; // w = plexi 9
+                case 'x': game->hitPlexi(9); break; // x = plexi 10
+                case 'c': game->hitPlexi(10); break; // c = plexi 11
+                case 'v': game->hitPlexi(11); break; // v = plexi 12
             }
         }
 //    }
